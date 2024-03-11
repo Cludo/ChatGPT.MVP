@@ -4,7 +4,7 @@ from openai import OpenAI, OpenAIError
 
 
 class ChatGPTException(Exception):
-    """Exception class for errors coming from ChatGPT. """
+    """Exception class for errors coming from ChatGPT."""
 
     def __init__(self, message: str, status_code: int):
         """

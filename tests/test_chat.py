@@ -7,7 +7,7 @@ from src.chat_client import ChatClient
 
 
 def test_chat():
-    """ Test the chat method of the ChatClient class. """
+    """Test the chat method of the ChatClient class."""
 
     # create a ChatClient instance
     bot = ChatClient()

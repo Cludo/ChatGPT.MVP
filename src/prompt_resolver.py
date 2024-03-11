@@ -40,7 +40,7 @@ class PromptResolver:
 
         :param filename: filepath to the template
         :param kwargs: keyword arguments to pass to the template
-        :return:
+        :return: a Prompt object
         """
 
         text = self.render(filename, **kwargs)

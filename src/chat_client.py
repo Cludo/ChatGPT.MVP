@@ -23,11 +23,12 @@ class ChatClient:
 
         :param message: user message
         :param personality: personality for ChatGPT
-        :return:
+        :return: response from ChatGPT
         """
 
         self.logger.info(f"STARTED CHAT SESSION {self.session_id}")
 
+        # construct system prompt
         system_prompt = self.get_system_prompt(personality=personality)
 
         # format input messages to ChatGPT
@@ -54,6 +55,8 @@ class ChatClient:
         """
 
         system_message_filepath = "src/prompts/system.liquid"
+
+        # add personality variable as keyword argument to the prompt resolver
         system_message = self.prompt_resolver.make_prompt(filename=system_message_filepath,
                                                           personality=personality).body
 
