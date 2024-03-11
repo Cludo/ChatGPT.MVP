@@ -15,8 +15,8 @@ class CustomHTTPException(HTTPException):
         """
         Initializes a CustomHTTPException object.
 
-        :param status_code: The status code of the exception.
-        :param detail: The response details of the exception.
+        :param status_code: the status code of the exception
+        :param detail: the response details of the exception
         """
         super().__init__(status_code=status_code, detail=detail.model_dump())
 
@@ -26,10 +26,10 @@ def custom_http_exception_handler(request: Request, exc: HTTPException) -> JSONR
     """
     Handles errors of type HTTPException, returning JSON responses with error details and status codes.
 
-    :param request: The request object.
-    :param exc: The HTTPException object.
+    :param request: the request object
+    :param exc: the HTTPException object
 
-    :return JSONResponse: The JSON response with error details and status code.
+    :return JSONResponse: the JSON response with error details and status code
     """
     return JSONResponse(content=exc.detail, status_code=exc.status_code)
 
@@ -40,10 +40,10 @@ def validation_exception_handler(request: Request, exc: RequestValidationError) 
     Handles errors of type RequestValidationError,
     returning JSON responses with error details and status code 400.
 
-    :param request: The request object.
-    :param exc: The RequestValidationError object.
+    :param request: the request object
+    :param exc: the RequestValidationError object
 
-    :return JSONResponse: The JSON response with error details and status code 400.
+    :return JSONResponse: the JSON response with error details and status code 400
     """
     response = Response(
         error=str(exc.errors()),
@@ -70,9 +70,8 @@ def chat(input_data: Input) -> dict:
     """
     Chat endpoint for interacting with the chatbot.
 
-    :param input_data: Input data for the chat endpoint.
-
-    :return: Response data from the chat endpoint.
+    :param input_data: input data for the chat endpoint
+    :return: response data from the chat endpoint
     """
 
     try:
