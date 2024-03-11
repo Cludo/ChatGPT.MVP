@@ -1,6 +1,20 @@
 # ChatGPT.MVP
 From ChatGPT to MVP - In-person AI Workshop in Copenhagen
 
+## Table of contents
+
+- [Getting started](#getting-started)
+  - [Activate virtual environment](#activate-virtual-environment)
+  - [Install dependencies](#install-dependencies)
+  - [Build](#build)
+  - [Run](#run)
+- [API](#api)
+  - [Start](#start)
+  - [Request](#request)
+  - [Response (success)](#response-success)
+  - [Response (error)](#response-error)
+- [Test](#test)
+
 ## Getting started
 
 All commands below assume a PowerShell environment on a Windows machine.
@@ -17,6 +31,63 @@ All commands below assume a PowerShell environment on a Windows machine.
 
 ```bash
 pip install -r requirements.txt
+```
+
+### Build
+
+```bash
+docker build -t cludo-capitalizer .
+```
+
+### Run
+
+```bash
+docker run -p 3000:3000 cludo-capitalizer
+```
+
+## API
+
+### Start
+
+```bash
+uvicorn src.main:app --reload --port 8000
+```
+
+### Request
+
+```bash
+curl -X POST 'http://{hostname}:{port}/v1/chat' \
+-H 'accept: application/json' \
+-H 'Content-Type: application/json' \
+-d '{
+  "personality": "string"
+}'
+```
+
+Parameters:
+
+| Name          | Description           | Required |
+|:--------------|:----------------------|:---------|
+| `personality` | style cue for ChatGPT | Yes      |
+
+### Response (success)
+
+```json
+{
+   "error" : null,
+   "result" : {
+      "answer" : "string"
+   }
+}
+```
+
+### Response (error)
+
+```json
+{
+   "error" : "string",
+   "result" : null
+}
 ```
 
 ## Test
