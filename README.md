@@ -19,6 +19,12 @@ From ChatGPT to MVP - In-person AI Workshop in Copenhagen
 
 All commands below assume a PowerShell environment on a Windows machine.
 
+### Create virtual environment
+
+```bash
+python -m venv .venv
+```
+
 ### Activate virtual environment
 
 ```bash
