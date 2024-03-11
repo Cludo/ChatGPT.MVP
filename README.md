@@ -36,13 +36,13 @@ pip install -r requirements.txt
 ### Build
 
 ```bash
-docker build -t cludo-capitalizer .
+docker build -t chatgpt-mvp .
 ```
 
 ### Run
 
 ```bash
-docker run -p 3000:3000 cludo-capitalizer
+docker run --env OPENAI_API_KEY=$Env:OPENAI_API_KEY -p 8001:8001 chatgpt-mvp
 ```
 
 ## API
