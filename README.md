@@ -18,3 +18,23 @@ All commands below assume a PowerShell environment on a Windows machine.
 ```bash
 pip install -r requirements.txt
 ```
+
+## Test
+
+Run all tests:
+
+```bash
+coverage run -m pytest
+```
+
+Get coverage report:
+
+```bash
+coverage report
+```
+
+Generate html report:
+
+```bash
+coverage html
+```
