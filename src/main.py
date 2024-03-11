@@ -80,7 +80,7 @@ def chat(input_data: Input) -> dict:
         message = input_data.message
         personality = input_data.personality
 
-        # initialize chatbot client
+        # create a ChatClient instance
         bot = ChatClient()
 
         # get response from chatbot
