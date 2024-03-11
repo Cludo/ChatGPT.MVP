@@ -66,9 +66,9 @@ curl -X POST 'http://{hostname}:{port}/v1/chat' \
 
 Parameters:
 
-| Name          | Description           | Type   | Required |
-|:--------------|:----------------------|:-------|:---------|
-| `personality` | style cue for ChatGPT | string | Yes      |
+| Name          | Description           | Type     | Required |
+|:--------------|:----------------------|:---------|:---------|
+| `personality` | style cue for ChatGPT | `string` | Yes      |
 
 ### Response (success)
 
