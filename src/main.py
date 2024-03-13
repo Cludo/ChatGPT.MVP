@@ -11,6 +11,7 @@ app = FastAPI()
 
 class CustomHTTPException(HTTPException):
     """Custom HTTP Exception class for encapsulating API response details in exceptions."""
+
     def __init__(self, status_code: int, detail: Response):
         """
         Initializes a CustomHTTPException object.
