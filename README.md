@@ -19,6 +19,10 @@ From ChatGPT to MVP - In-person AI Workshop in Copenhagen
 
 All commands below assume a PowerShell environment on a Windows machine.
 
+### Get an OpenAI API key
+
+Follow the instructions [here](https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key).
+
 ### Create virtual environment
 
 ```bash
