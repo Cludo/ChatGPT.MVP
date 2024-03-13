@@ -26,7 +26,6 @@ class ChatGPT:
 
         :param model_name: OpenAI model name
         """
-
         self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))  # initialize OpenAI client with API key
         self.model_name = model_name
 
